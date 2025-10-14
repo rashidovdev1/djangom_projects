@@ -8,7 +8,7 @@
     <h1>Kun yangiliklari</h1>
     <ul>
         {% for post in object_list %}
-            <li><h3>{{ post.title }}</h3>{{ post.content }}</li>
+            <li><h3>{{ post.title }}</h3>{{ post.content | slice:100 }}</li>
         {% endfor %}
     </ul>
 </body>
