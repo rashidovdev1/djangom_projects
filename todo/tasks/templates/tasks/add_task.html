@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangi task qo‘shish</title>
+</head>
+<body>
+    <h2>Yangi task qo‘shish</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Vazifa nomi" required>
+        <button type="submit">Qo‘shish</button>
+    </form>
+    <a href="{% url 'task_list' %}">⬅️ Orqaga</a>
+</body>
+</html>

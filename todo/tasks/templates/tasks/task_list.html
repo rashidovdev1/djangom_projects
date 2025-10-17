@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>📝 Todo List</h1>
+    <a href="{% url 'add_task' %}">+ Yangi task qo‘shish</a>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {% if task.complete %}✅{% else %}⬜{% endif %}
+                {{ task.title }}
+                <a href="{% url 'update_task' task.id %}">Edit</a> |
+                <a href="{% url 'delete_task' task.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>Hozircha vazifa yo‘q 😴</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

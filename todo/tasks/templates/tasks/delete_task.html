@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>O‘chirish</title>
+</head>
+<body>
+    <h2>Haqiqatan ham "{{ task.title }}" ni o‘chirmoqchimisiz?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Ha, o‘chir</button>
+    </form>
+    <a href="{% url 'task_list' %}">Yo‘q, orqaga</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taskni tahrirlash</title>
+</head>
+<body>
+    <h2>Tahrirlash</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="title" value="{{ task.title }}" required>
+        <label>
+            <input type="checkbox" name="complete" {% if task.complete %}checked{% endif %}>
+            Tugallangan
+        </label>
+        <button type="submit">Saqlash</button>
+    </form>
+    <a href="{% url 'task_list' %}">⬅️ Orqaga</a>
+</body>
+</html>
