@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Taskni tahrirlash</title>
-</head>
-<body>
-    <h2>Tahrirlash</h2>
+{% extends 'tasks/base.html' %}
+{% block content %}
+<div class="card shadow p-3">
+    <h3>Vazifani tahrirlash</h3>
     <form method="POST">
         {% csrf_token %}
-        <input type="text" name="title" value="{{ task.title }}" required>
-        <label>
-            <input type="checkbox" name="complete" {% if task.complete %}checked{% endif %}>
-            Tugallangan
-        </label>
-        <button type="submit">Saqlash</button>
+        <div class="mb-3">
+            <input type="text" name="title" value="{{ task.title }}" class="form-control" required>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" name="complete" class="form-check-input" {% if task.complete %}checked{% endif %}>
+            <label class="form-check-label">Tugallangan</label>
+        </div>
+        <button type="submit" class="btn btn-success">💾 Saqlash</button>
     </form>
-    <a href="{% url 'task_list' %}">⬅️ Orqaga</a>
-</body>
-</html>
+</div>
+<div class="mt-3">
+    <a href="{% url 'task_list' %}" class="btn btn-secondary">⬅️ Orqaga</a>
+</div>
+{% endblock %}

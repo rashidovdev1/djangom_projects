@@ -27,3 +27,12 @@ def delete_task(request, pk):
         task.delete()
         return redirect('task_list')
     return render(request, 'tasks/delete_task.html', {'task': task})
+
+def task_list(request):
+    show_completed = request.GET.get('show') == 'done'
+    if show_completed:
+        tasks = Task.objects.filter(complete=True)
+    else:
+        tasks = Task.objects.filter(complete=False)
+    return render(request, 'tasks/task_list.html', {'tasks': tasks, 'show_completed': show_completed})
+

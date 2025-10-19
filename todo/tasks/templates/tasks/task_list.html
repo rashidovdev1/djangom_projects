@@ -1,23 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Todo List</title>
-</head>
-<body>
-    <h1>📝 Todo List</h1>
-    <a href="{% url 'add_task' %}">+ Yangi task qo‘shish</a>
-    <ul>
+{% extends 'tasks/base.html' %}
+{% block title %}Barcha vazifalar{% endblock %}
+{% block content %}
+
+<div class="mb-3 text-end">
+    <a href="{% url 'add_task' %}" class="btn btn-primary">+ Vazifa qo‘shish</a>
+</div>
+
+<div class="card shadow p-3">
+    <ul class="list-group list-group-flush">
         {% for task in tasks %}
-            <li>
-                {% if task.complete %}✅{% else %}⬜{% endif %}
-                {{ task.title }}
-                <a href="{% url 'update_task' task.id %}">Edit</a> |
-                <a href="{% url 'delete_task' task.id %}">Delete</a>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    {% if task.complete %}
+                        <span class="text-decoration-line-through text-success">{{ task.title }}</span>
+                    {% else %}
+                        <span>{{ task.title }}</span>
+                    {% endif %}
+                </div>
+                <div>
+                    <a href="{% url 'update_task' task.id %}" class="btn btn-sm btn-outline-warning">✏️</a>
+                    <a href="{% url 'delete_task' task.id %}" class="btn btn-sm btn-outline-danger">🗑️</a>
+                </div>
             </li>
         {% empty %}
-            <li>Hozircha vazifa yo‘q 😴</li>
+            <li class="list-group-item text-center text-muted">Hozircha vazifa yo‘q 😴</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+</div>
+
+<div class="mb-3">
+    {% if show_completed %}
+        <a href="?show=todo" class="btn btn-outline-secondary">⬅️ Tugallanmaganlar</a>
+    {% else %}
+        <a href="?show=done" class="btn btn-outline-success">✅ Tugallanganlar</a>
+    {% endif %}
+</div>
+
+
+{% endblock %}
