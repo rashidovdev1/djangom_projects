@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Ro‘yxatdan o‘tish</title>
+</head>
+<body>
+    <h2>Ro‘yxatdan o‘tish</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username:</label><br>
+        <input type="text" name="username"><br>
+        <label>Parol:</label><br>
+        <input type="password" name="password"><br>
+        <label>Parolni tasdiqlang:</label><br>
+        <input type="password" name="password2"><br><br>
+        <button type="submit">Ro‘yxatdan o‘tish</button>
+    </form>
+    <a href="{% url 'login' %}">Kirish</a>
+</body>
+</html>
