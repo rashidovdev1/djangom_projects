@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>🧠 {{ lesson.title }} bo‘yicha test</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for question in questions %}
+      <div style="margin-bottom: 20px;">
+        <strong>{{ forloop.counter }}. {{ question.text }}</strong><br>
+        {% for answer in question.answers.all %}
+          <label>
+            <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}">
+            {{ answer.text }}
+          </label><br>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit">✅ Javobni yuborish</button>
+  </form>
+{% endblock %}

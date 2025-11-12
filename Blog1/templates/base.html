@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rashidov.dev</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">Rashidov dev Blog project</a> </h1>
+    </header>
+<div>
+    {% block content %}
+    {% endblock content %}
+</div>
+
+</body>
+</html>

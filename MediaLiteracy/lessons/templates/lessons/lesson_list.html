@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>🎥 Videodarslar</h2>
+
+  {% if lessons %}
+    {% for lesson in lessons %}
+      <div style="margin-bottom: 30px;">
+        <h3>{{ lesson.title }}</h3>
+        <p>{{ lesson.description }}</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6cR4_9srSC0?si=AUlGFKMgC8FNwiRW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>Hozircha videodarslar mavjud emas.</p>
+  {% endif %}
+{% endblock %}

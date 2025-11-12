@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     #My_apps
     'core',
     'users',
+    'lessons',
+    'quizzes',
 ]
 
 MIDDLEWARE = [

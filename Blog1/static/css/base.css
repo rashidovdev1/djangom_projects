@@ -1,0 +1,115 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9fb;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1e2a38;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* Content */
+.content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.post-entry {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.post-entry h2 a {
+    text-decoration: none;
+    color: #1e2a38;
+}
+
+.post-entry h2 a:hover {
+    color: #007bff;
+}
+
+.excerpt {
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Post detail */
+.post-detail {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-detail h2 {
+    color: #1e2a38;
+}
+
+.post-detail .author {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.post-detail .body {
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e2a38;
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
